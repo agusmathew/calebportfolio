@@ -8,6 +8,8 @@
   --brass: #b08b4f;
   --rose: #f3e6dc;
   --sky: #d9e8e6;
+  --navy: #121826;
+  --sand: #f9f2e7;
 }
 
 @theme inline {
@@ -34,18 +36,86 @@ body {
 }
 
 .bg-paper-pattern {
-  background-image: radial-gradient(circle at 12% 18%, rgba(45, 58, 51, 0.08), transparent 45%),
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(45, 58, 51, 0.08), transparent 45%),
     radial-gradient(circle at 88% 20%, rgba(176, 139, 79, 0.12), transparent 40%),
-    linear-gradient(120deg, rgba(217, 232, 230, 0.5), transparent 55%);
+    linear-gradient(120deg, rgba(217, 232, 230, 0.45), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
 }
 
 .section-card {
   background: rgba(255, 255, 255, 0.65);
   border: 1px solid rgba(26, 25, 23, 0.08);
   box-shadow: 0 24px 70px rgba(26, 25, 23, 0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 75px rgba(26, 25, 23, 0.12);
 }
 
 .tag {
   border: 1px solid rgba(26, 25, 23, 0.15);
   background: rgba(232, 223, 209, 0.7);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  border-color: rgba(26, 25, 23, 0.3);
+}
+
+.hero-badge {
+  border: 1px solid rgba(26, 25, 23, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.cta-button {
+  background: linear-gradient(120deg, var(--olive), var(--navy));
+  color: white;
+  box-shadow: 0 18px 40px rgba(18, 24, 38, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(18, 24, 38, 0.3);
+}
+
+.soft-panel {
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.7), rgba(233, 223, 209, 0.4));
+  border: 1px solid rgba(26, 25, 23, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soft-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 65px rgba(26, 25, 23, 0.12);
+}
+
+.link-chip {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(26, 25, 23, 0.35);
+  box-shadow: 0 10px 30px rgba(26, 25, 23, 0.1);
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: floatIn 0.8s ease both;
 }

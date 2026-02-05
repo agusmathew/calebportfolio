@@ -13,7 +13,7 @@ const body = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Sibson Cale B. D. E. Akara | Compliance & AML",
+  title: "Sibson Caleb Edakara | Compliance & AML",
   description:
     "Compliance professional specializing in AML/KYC operations, due diligence, and financial crime prevention.",
 };
